@@ -1,0 +1,66 @@
+'use client'
+import { EditableText } from '../EditableText'
+
+export function PhilosophySection() {
+  return (
+    <section className="py-32 bg-white relative" id="philosophy">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <h2 className="text-4xl font-normal text-slate-900 mb-6 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+            <EditableText section="philosophy" field="title" tag="span" />
+          </h2>
+          <p className="text-slate-600 font-normal leading-relaxed">
+            <EditableText section="philosophy" field="subtitle" multiline tag="span" />
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 relative">
+          {/* Step 1 */}
+          <div className="relative z-10 flex flex-col items-center p-8 group">
+            <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-8 bg-[#f8f7f5]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#f29202]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-normal text-slate-900 mb-3 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+                <EditableText section="philosophy" field="step1Title" tag="span" />
+              </h3>
+              <p className="text-slate-600 font-normal leading-relaxed">
+                <EditableText section="philosophy" field="step1Desc" multiline tag="span" />
+              </p>
+            </div>
+          </div>
+
+          {/* Step 2 — featured */}
+          <div className="relative z-10 flex flex-col items-center p-8 group">
+            <div className="h-28 w-28 rounded-3xl flex items-center justify-center mb-8 shadow-[0_0_50px_rgba(242,146,2,0.3)]" style={{ backgroundImage: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-12 h-12 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 9a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h4"/><path d="M20 9a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-4"/><path d="M12 4v16"/><path d="M8 4h8"/><path d="M8 20h8"/></svg>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-normal text-slate-900 mb-3 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+                <EditableText section="philosophy" field="step2Title" tag="span" />
+              </h3>
+              <p className="text-slate-600 font-normal leading-relaxed">
+                <EditableText section="philosophy" field="step2Desc" multiline tag="span" />
+              </p>
+            </div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="relative z-10 flex flex-col items-center p-8 group">
+            <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-8 bg-[#f8f7f5]">
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-[#f29202]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-normal text-slate-900 mb-3 tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
+                <EditableText section="philosophy" field="step3Title" tag="span" />
+              </h3>
+              <p className="text-slate-600 font-normal leading-relaxed">
+                <EditableText section="philosophy" field="step3Desc" multiline tag="span" />
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
