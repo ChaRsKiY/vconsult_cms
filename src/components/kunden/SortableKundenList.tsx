@@ -6,6 +6,7 @@ import { CSS } from '@dnd-kit/utilities'
 import { updateKundenOrder } from '@/actions/kunden'
 import { DeleteKundeButton } from './DeleteKundeButton'
 import { ToggleKundeButton } from './ToggleKundeButton'
+import { TrustbarToggleButton } from './TrustbarToggleButton'
 import type { Kunde } from '@/types/database'
 
 function SortableKundeItem({ kunde }: { kunde: Kunde }) {
@@ -57,7 +58,8 @@ function SortableKundeItem({ kunde }: { kunde: Kunde }) {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 shrink-0">
+      <div className="flex items-center gap-2 shrink-0">
+        <TrustbarToggleButton id={kunde.id} showInTrustbar={kunde.show_in_trustbar} />
         <ToggleKundeButton id={kunde.id} active={kunde.active} />
         <DeleteKundeButton id={kunde.id} />
       </div>

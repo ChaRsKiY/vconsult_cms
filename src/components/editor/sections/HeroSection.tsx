@@ -2,6 +2,7 @@
 import { EditableText } from '../EditableText'
 
 export function HeroSection() {
+
   return (
     <section className="relative overflow-hidden bg-white min-h-[90vh] flex items-center justify-center pt-20">
       <div className="absolute inset-0 -z-10 overflow-hidden opacity-30 pointer-events-none">
@@ -19,11 +20,15 @@ export function HeroSection() {
         />
 
         <h1 className="font-normal text-slate-900 mb-7 leading-[1.08] tracking-tight" style={{ fontSize: 'clamp(2.4rem,6vw,4.5rem)', fontFamily: 'var(--font-display)' }}>
-          Merging{' '}
-          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>Business</span>
+          <EditableText section="hero" field="titlePart1" tag="span" className="[font-family:inherit]" />
+          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>
+            <EditableText section="hero" field="titlePart2" tag="span" className="[font-family:inherit]" />
+          </span>
           <br className="hidden sm:block" />
-          {' '}&amp;{' '}
-          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>IT</span>
+          <EditableText section="hero" field="titlePart3" tag="span" className="[font-family:inherit]" />
+          <span className="text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>
+            <EditableText section="hero" field="titlePart4" tag="span" className="[font-family:inherit]" />
+          </span>
         </h1>
 
         <EditableText

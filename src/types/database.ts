@@ -22,5 +22,6 @@ export type Kunde = {
   website_url: string | null
   display_order: number
   active: boolean
+  show_in_trustbar: boolean
   created_at: string
 }

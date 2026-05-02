@@ -86,6 +86,12 @@ export async function toggleKunde(id: string, active: boolean) {
   revalidatePath('/kunden')
 }
 
+export async function toggleTrustbar(id: string, show_in_trustbar: boolean) {
+  const supabase = await createSupabaseServerClient()
+  await supabase.from('kunden').update({ show_in_trustbar }).eq('id', id)
+  revalidatePath('/kunden')
+}
+
 export async function updateKundenOrder(ids: string[]) {
   const supabase = await createSupabaseServerClient()
   await Promise.all(ids.map((id, i) => supabase.from('kunden').update({ display_order: i + 1 }).eq('id', id)))
