@@ -103,6 +103,35 @@ export function LeistungenSection() {
         </div>
       </section>
 
+      {/* Enterprise AI Teaser */}
+      <section className="py-16 bg-white border-t border-[#e5e7eb]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="rounded-3xl border border-[#f29202]/20 bg-[#f29202]/[0.03] p-8 md:p-12 flex flex-col md:flex-row md:items-center gap-8">
+            <div className="flex-grow">
+              <p className="text-xs font-semibold uppercase tracking-widest text-[#f29202] mb-3">
+                <EditableText section="leistungen" field="aiTeaserBadge" tag="span" />
+              </p>
+              <h2 className="text-2xl font-normal text-slate-900 mb-3 tracking-tight">
+                <EditableText section="leistungen" field="aiTeaserTitle" tag="span" />
+              </h2>
+              <p className="text-slate-600 leading-relaxed max-w-2xl">
+                <EditableText section="leistungen" field="aiTeaserDesc" multiline tag="span" />
+              </p>
+            </div>
+            <div className="flex flex-col sm:flex-row md:flex-col gap-3 shrink-0">
+              <span className="rounded-xl font-bold inline-flex items-center justify-center gap-2 px-6 py-3 text-sm text-white whitespace-nowrap" style={{ background: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)' }}>
+                <EditableText section="leistungen" field="aiTeaserCta1" tag="span" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+              <span className="rounded-xl font-bold inline-flex items-center justify-center gap-2 border border-[#e5e7eb] bg-white text-slate-900 px-6 py-3 text-sm whitespace-nowrap">
+                <EditableText section="leistungen" field="aiTeaserCta2" tag="span" />
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* mBaIT Quote */}
       <section className="py-20 bg-[#f8f7f5] border-t border-[#e5e7eb]">
         <div className="max-w-3xl mx-auto px-6 text-center">

@@ -2,8 +2,8 @@
 import { useEditor } from '../EditorContext'
 
 const NAV_LINKS = {
-  de: ['Philosophie', 'Leistungen', 'News', 'Unternehmen'],
-  en: ['Philosophy', 'Services', 'News', 'About'],
+  de: ['Philosophie', 'Leistungen', 'Kunden', 'News', 'Unternehmen'],
+  en: ['Philosophy', 'Services', 'Clients', 'News', 'About'],
 }
 
 export function NavSection() {
