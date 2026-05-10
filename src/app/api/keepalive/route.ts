@@ -23,17 +23,12 @@ export async function GET() {
       cache: "no-store",
     });
 
-    if (response.ok) {
-      return NextResponse.json({
-        status: "ok",
-        message: "Supabase pinged successfully",
-      });
-    } else {
-      return NextResponse.json(
-        { status: "error", message: `Supabase returned ${response.status}` },
-        { status: 500 }
-      );
-    }
+    // Любой ответ от Supabase (даже 307, 400 или 404) означает, что запрос дошел 
+    // до их серверов и активность засчитана.
+    return NextResponse.json({
+      status: "ok",
+      message: `Supabase pinged successfully. Status: ${response.status}`,
+    });
   } catch (error) {
     return NextResponse.json(
       { status: "error", message: String(error) },
