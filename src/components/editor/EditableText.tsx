@@ -9,16 +9,18 @@ type Props = {
   multiline?: boolean
   tag?: 'h1' | 'h2' | 'h3' | 'p' | 'span'
   dark?: boolean
+  fallback?: string
 }
 
-export function EditableText({ section, field, className = '', multiline = false, tag: Tag = 'span', dark = false }: Props) {
+export function EditableText({ section, field, className = '', multiline = false, tag: Tag = 'span', dark = false, fallback = '' }: Props) {
   const { content, lang, updateField } = useEditor()
   const value = (content[lang] as Record<string, Record<string, string>>)[section]?.[field] ?? ''
+  const displayValue = value || fallback
   const [editing, setEditing] = useState(false)
-  const [draft, setDraft] = useState(value)
+  const [draft, setDraft] = useState(displayValue)
   const ref = useRef<HTMLTextAreaElement | HTMLInputElement>(null)
 
-  useEffect(() => { if (!editing) setDraft(value) }, [value, editing])
+  useEffect(() => { if (!editing) setDraft(displayValue) }, [displayValue, editing])
   useEffect(() => { if (editing) ref.current?.focus() }, [editing])
 
   function commit() {
@@ -66,7 +68,7 @@ export function EditableText({ section, field, className = '', multiline = false
       title="Klicken zum Bearbeiten"
       className={`cursor-text rounded transition-all ${hoverClass} ${className}`}
     >
-      {value || <span className={`italic text-sm ${dark ? 'text-white/50' : 'opacity-30'}`}>Leer</span>}
+      {displayValue || <span className={`italic text-sm ${dark ? 'text-white/50' : 'opacity-30'}`}>Leer</span>}
     </Tag>
   )
 }

@@ -1,5 +1,19 @@
 'use client'
 import { EditableText } from '../EditableText'
+import { useEditor } from '../EditorContext'
+
+const FEATURE_FALLBACKS = {
+  de: {
+    card1Feature3: 'Logistik-Optimierung',
+    card2Feature3: 'Prozessharmonisierung',
+    card3Feature3: 'SAP-Integration',
+  },
+  en: {
+    card1Feature3: 'Logistics Optimization',
+    card2Feature3: 'Process Harmonization',
+    card3Feature3: 'SAP Integration',
+  },
+}
 
 function CheckIcon() {
   return (
@@ -10,6 +24,9 @@ function CheckIcon() {
 }
 
 export function ServicesSection() {
+  const { lang } = useEditor()
+  const fallback = FEATURE_FALLBACKS[lang]
+
   return (
     <section className="py-32" style={{ background: '#f8f7f5' }} id="services">
       <div className="max-w-7xl mx-auto px-6">
@@ -43,6 +60,7 @@ export function ServicesSection() {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card1Feature1" tag="span" /></li>
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card1Feature2" tag="span" /></li>
+              <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card1Feature3" fallback={fallback.card1Feature3} tag="span" /></li>
             </ul>
             <span className="rounded-xl font-bold inline-flex items-center justify-center gap-2 border border-[#e5e7eb] bg-white text-slate-900 px-8 py-3 text-sm w-full" style={{ fontFamily: 'var(--font-display)' }}>
               <EditableText section="services" field="card1Cta" tag="span" />
@@ -68,6 +86,7 @@ export function ServicesSection() {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card2Feature1" tag="span" /></li>
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card2Feature2" tag="span" /></li>
+              <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card2Feature3" fallback={fallback.card2Feature3} tag="span" /></li>
             </ul>
             <span className="rounded-xl font-bold inline-flex items-center justify-center gap-2 text-white shadow-lg px-8 py-3 text-sm w-full" style={{ background: 'linear-gradient(90deg, #ed9f7b 0%, #f29202 100%)', fontFamily: 'var(--font-display)' }}>
               <EditableText section="services" field="card2Cta" tag="span" />
@@ -88,6 +107,7 @@ export function ServicesSection() {
             <ul className="space-y-3 mb-8">
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card3Feature1" tag="span" /></li>
               <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card3Feature2" tag="span" /></li>
+              <li className="flex items-center text-sm font-semibold text-slate-700"><CheckIcon /><EditableText section="services" field="card3Feature3" fallback={fallback.card3Feature3} tag="span" /></li>
             </ul>
             <span className="rounded-xl font-bold inline-flex items-center justify-center gap-2 border border-[#e5e7eb] bg-white text-slate-900 px-8 py-3 text-sm w-full" style={{ fontFamily: 'var(--font-display)' }}>
               <EditableText section="services" field="card3Cta" tag="span" />
